@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Body Mass Index and Percent Fat Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Body Mass Index and Percent Fat Calculator">
+  <meta name="author" content="AKW">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Body Mass Index and Percent Fat Calculator</h1>
+    <h2>BMI and %Fat and Classification</h2>
+    <p>AKW<br/>EE</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h3>About Body Mass Index and Percent Fat Calculator</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>This application is developed to calculate:</p>
+
+<ol>
+<li>Body Mass Index (BMI)</li>
+<li>Percent fat Content</li>
+</ol>
+
+<p>The weight classification is determined using the calcutaed BMI value as:</p>
+
+<ol>
+<li>Underweight (BMI&lt;18.5)</li>
+<li>Normal Wight (18.5&lt;BMI&lt;24.9)</li>
+<li>Overweight (24.9&lt;BMI&lt;29.9) or</li>
+<li>Obese (BMI&gt;30)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Body Mass Index Calculations</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>The Body Mass Index (BMI) is calculated as:</p>
+
+<h4>\[BMI=\frac{weight*730} {height^2}\]</h4>
+
+<p>where;  weight is body weight in pounds and
+        height is body height in inches<br>
+source: <a href="http://www.scientificpsychic.com/fitness/diet.html">http://www.scientificpsychic.com/fitness/diet.html</a></p>
+
+<pre><code class="r">weight&lt;-100 ## initial value for weight
+height &lt;- 70 ## initial value for height
+BMI&lt;- (weight*703)/(height^2)
+BMI
+</code></pre>
+
+<pre><code>## [1] 14.35
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Percent Fat Calculations</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>The Percent fat content is determined based on the BMI, age, and gender:
+The Percent fat conten is estimated using the following equations:</p>
+
+<p>For adults (age &gt;15 years) and Adults (age &gt;15 years):</p>
+
+<h4>\(Child Body Fat =(1.51*BMI)-(0.70*Age)-(3.6*gender)+1.4\)</h4>
+
+<h4>\(Adult Body Fat =(1.20*BMI)+(0.23*Age)-(10.8*gender)-5.4\)</h4>
+
+<pre><code class="r">weight&lt;-100; height &lt;- 70; agec &lt;-15; agea &lt;-25; gender&lt;-0 
+
+PercentFatChildren=(1.51*(weight*703)/(height^2)) - (0.70*agec) - (3.6*gender) + 1.4
+PercentFatAdult=(1.20*(weight*703)/(height^2)) + (0.23*agea) - (10.8*gender) - 5.4
+PercentFatChildren;  PercentFatAdult
+</code></pre>
+
+<pre><code>## [1] 12.56
+</code></pre>
+
+<pre><code>## [1] 17.57
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h3>Application</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>Knowing Body Mass Index (BMI) and Percent Fat is very essential to 
+monitor one&#39;s helath status</p>
+
+<p>This Application (BMI_Calc)can be used to calculate BMI and % fat 
+content from radiliy available measurments of body weight and body 
+height as well as age and gender of the person.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='About Body Mass Index and Percent Fat Calculator'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Body Mass Index Calculations'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Percent Fat Calculations'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Application'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

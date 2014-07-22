@@ -1,0 +1,93 @@
+---
+title       : Body Mass Index and Percent Fat Calculator
+subtitle    : BMI and %Fat and Classification
+author      : AKW
+job         : EE
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+### About Body Mass Index and Percent Fat Calculator
+
+This application is developed to calculate:
+
+1. Body Mass Index (BMI)
+2. Percent fat Content
+
+The weight classification is determined using the calcutaed BMI value as:
+
+1. Underweight (BMI<18.5)
+2. Normal Wight (18.5<BMI<24.9)
+3. Overweight (24.9<BMI<29.9) or
+4. Obese (BMI>30)
+
+--- .class #id 
+
+### Body Mass Index Calculations
+
+The Body Mass Index (BMI) is calculated as:
+
+#### $$BMI=\frac{weight*730} {height^2}$$
+
+where;  weight is body weight in pounds and
+        height is body height in inches      
+source: http://www.scientificpsychic.com/fitness/diet.html
+
+
+```r
+weight<-100 ## initial value for weight
+height <- 70 ## initial value for height
+BMI<- (weight*703)/(height^2)
+BMI
+```
+
+```
+## [1] 14.35
+```
+
+--- .class #id 
+
+### Percent Fat Calculations
+
+The Percent fat content is determined based on the BMI, age, and gender:
+The Percent fat conten is estimated using the following equations:
+
+For adults (age >15 years) and Adults (age >15 years):
+
+
+#### $Child Body Fat =(1.51*BMI)-(0.70*Age)-(3.6*gender)+1.4$
+
+#### $Adult Body Fat =(1.20*BMI)+(0.23*Age)-(10.8*gender)-5.4$
+
+
+
+```r
+weight<-100; height <- 70; agec <-15; agea <-25; gender<-0 
+
+PercentFatChildren=(1.51*(weight*703)/(height^2)) - (0.70*agec) - (3.6*gender) + 1.4
+PercentFatAdult=(1.20*(weight*703)/(height^2)) + (0.23*agea) - (10.8*gender) - 5.4
+PercentFatChildren;  PercentFatAdult
+```
+
+```
+## [1] 12.56
+```
+
+```
+## [1] 17.57
+```
+
+---
+
+### Application
+
+Knowing Body Mass Index (BMI) and Percent Fat is very essential to 
+monitor one's helath status
+
+This Application (BMI_Calc)can be used to calculate BMI and % fat 
+content from radiliy available measurments of body weight and body 
+height as well as age and gender of the person.
